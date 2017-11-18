@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataAccessException;
@@ -20,7 +21,7 @@ import com.intellect.modal.ResponseWrapper;
 import com.intellect.modal.User;
 
 @Service
-public class UserManageService extends UserCoreService {
+public class UserManageService  extends UserCoreService implements InitializingBean {
 
 
 	@Autowired
@@ -171,6 +172,20 @@ public class UserManageService extends UserCoreService {
 	public List<User> collectionUsers()
 	{
 		return (List<User>) jdbcTemplate.query("select * from User where isActive=true", new BeanPropertyRowMapper(User.class));
+	}
+
+
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		
+		String sqlcreate="create sequence user_seq;"
+				+ "CREATE TABLE IF NOT EXISTS PUBLIC.USER"
+				+ "( ID    varchar(60)  default user_seq.nextval primary key"
+				+ ", FNAME varchar(60), LNAME varchar(60), EMAIL varchar(60), PINCODE double, BIRTHDATE date, ISACTIVE boolean);";
+		
+		jdbcTemplate.update(sqlcreate);
+		
 	}
 
 
