@@ -1,0 +1,9 @@
+com\intellect\validators\UserValidator2.class
+com\intellect\service\UserCoreService.class
+com\intellect\validators\DateAndTimeDeserialize.class
+com\intellect\SpringBootApp.class
+com\intellect\modal\ResponseWrapper.class
+com\intellect\modal\User.class
+com\intellect\service\UserManageService.class
+com\intellect\control\UserManageController.class
+com\intellect\validators\UserValidator.class

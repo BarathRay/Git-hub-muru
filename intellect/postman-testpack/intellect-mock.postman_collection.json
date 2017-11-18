@@ -1,0 +1,108 @@
+{
+	"variables": [],
+	"info": {
+		"name": "intellect-mock",
+		"_postman_id": "2ba35286-6501-59ed-2b25-9cec9d9fc1cc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/usercollection",
+					"request": {
+						"url": "http://localhost:8080/api/usercollection",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "create-user-nagative",
+			"request": {
+				"url": "http://localhost:8080/api/user/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"fName\":\"ramki\",\n\"lName\":\"b\",\n\"email\":\"test@hotmail.com\",\n\"pinCode\":\"34266\",\n\"birthDate\":\"07-98-2017\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create-user-positive",
+			"request": {
+				"url": "http://localhost:8080/api/user/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"fName\":\"ramki\",\n\"lName\":\"b\",\n\"email\":\"test@hotmail.com\",\n\"pinCode\":\"34266\",\n\"birthDate\":\"07-Nov-2017\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update-user-positive",
+			"request": {
+				"url": "http://localhost:8080/api/user/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\":\"1016\"\t,\n\"fName\":\"ramki\",\n\"lName\":\"b\",\n\"email\":\"test@hotmail.com\",\n\"pinCode\":\"3426655\",\n\"birthDate\":\"07-Nov-2017\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete-user-positive",
+			"request": {
+				"url": "http://localhost:8080/api/user/delete/1016",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\":\"1016\"\t,\n\"fName\":\"ramki\",\n\"lName\":\"b\",\n\"email\":\"test@hotmail.com\",\n\"pinCode\":\"3426655\",\n\"birthDate\":\"07-Nov-2017\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
