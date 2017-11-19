@@ -179,7 +179,7 @@ public class UserManageService  extends UserCoreService implements InitializingB
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		
-		String sqlcreate="create sequence user_seq;"
+		String sqlcreate="create sequence IF NOT EXISTS user_seq;"
 				+ "CREATE TABLE IF NOT EXISTS PUBLIC.USER"
 				+ "( ID    varchar(60)  default user_seq.nextval primary key"
 				+ ", FNAME varchar(60), LNAME varchar(60), EMAIL varchar(60), PINCODE double, BIRTHDATE date, ISACTIVE boolean);";
